@@ -1,19 +1,14 @@
-# SQLite. Versions 3.8.0 and up are supported.
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem "sqlite3"
-#
 default: &default
   adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
+  username: postgres
+  password: postgres
 
 development:
   <<: *default
   database: hello_rails_react_development
-  username: postgres
-  password: postgres
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -25,5 +20,4 @@ test:
 production:
   <<: *default
   database: hello_rails_react_production
-  username: hello_rails_react
-  password: <%= ENV["HELLO_RAILS_REACT_DATABASE_PASSWORD"] %>
+  
