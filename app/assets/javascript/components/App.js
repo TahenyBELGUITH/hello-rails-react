@@ -10,7 +10,7 @@ function App() {
       <Provider store={store}>
         <Router>
           <Routes>
-            <Route path="/" element={<Greeting />} />
+            <Route path="/" index element={<Greeting />} />
           </Routes>
         </Router>
       </Provider>
